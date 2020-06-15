@@ -1,53 +1,17 @@
 
 pipeline { 
-
- 
- 
-
    agent any 
-
- 
-
 stages { 
-
- 
-
              stage('Git Checkout') { 
-
- 
-
                 steps { 
-
- 
-
                      git 'https://github.com/jyotissingh14/parking_backend.git' 
 
- 
-
 }} 
-
- 
-
-     stage('Build') { 
-
- 
-
+   stage('Build') { 
 steps { 
-
- 
-
 withSonarQubeEnv('sonar') { 
-
- 
-
 sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true' 
-
- 
-
 }}} 
-
- 
-
      stage("Quality Gate") { 
 
  
@@ -56,7 +20,7 @@ sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
 
  
 
-                    timeout(time: 5, unit: 'MINUTES') { 
+                    timeout(time: 1, unit: 'MINUTES') { 
 
  
 
