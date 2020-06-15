@@ -57,6 +57,11 @@
 			<version>2.9.2</version>
 		</dependency>
 		<dependency>
+<groupId>org.flywaydb</groupId> 
+ <artifactId>flyway-core</artifactId> 
+ <version>6.4.4</version> 
+</dependency>
+		<dependency>
 			<groupId>org.codehaus.mojo</groupId>
 			<artifactId>sonar-maven-plugin</artifactId>
 			<version>3.4.0.905</version>
@@ -70,7 +75,7 @@
 <distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
-			<url>http://18.221.19.83:8081/nexus/content/repositories/snapshots</url>
+			<url>http://52.14.19.158:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<build>
@@ -79,6 +84,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			plugin>
+	    <groupId>org.flywaydb</groupId>
+	    <artifactId>flyway-maven-plugin</artifactId>
+	    <version>6.4.4</version>
+	    <configuration>
+	         <baselineOnMigrate>true</baselineOnMigrate>
+	         <url>jdbc:mysql://52.14.19.158:3306</url>
+	         <user>flyuser1</user>
+		  <password>H@ckath0n</password>
+	      <schemas>
+	          <schema>flydb</schema>
+	        </schemas>
+	  </configuration>	
+	 </plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
