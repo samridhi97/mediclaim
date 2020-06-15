@@ -4,7 +4,7 @@ pipeline {
 stages { 
              stage('Git Checkout') { 
                 steps { 
-                     git 'https://github.com/jyotissingh14/parking_backend.git' 
+                     git 'https://github.com/samridhi97/mediclaim.git' 
 
 }} 
    stage('Build') { 
