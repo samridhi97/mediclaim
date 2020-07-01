@@ -75,7 +75,7 @@
 <distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
-			<url>http://52.14.19.158:8081/nexus/content/repositories/snapshots</url>
+			<url>http://18.188.166.149:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<build>
@@ -90,11 +90,11 @@
 	    <version>6.4.4</version>
 	    <configuration>
 	         <baselineOnMigrate>true</baselineOnMigrate>
-	         <url>jdbc:mysql://52.14.19.158:3306</url>
-	         <user>flyuser1</user>
+	         <url>jdbc:mysql://18.188.166.149:3306</url>
+	         <user>inguser2</user>
 		  <password>H@ckath0n</password>
 	      <schemas>
-	          <schema>flydb</schema>
+	          <schema>ingdb</schema>
 	        </schemas>
 	  </configuration>	
 	 </plugin>
